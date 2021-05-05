@@ -1,0 +1,60 @@
+<h1 class="mt-5">Producto</h1>
+<hr>
+<div class="row">
+    <div class="col text-right">
+        <button class="btn btn-info" routerLink="/producto/nuevo">
+            <i class="fa fa-plus"></i> Crear
+        </button>
+    </div>
+</div>
+<table *ngIf="!cargando && productos.length > 0" class="table mt-3">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">poder</th>
+        <th scope="col">vivo</th>
+        <th scope="col">tools</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let producto of productos; let i = index">
+        <th scope="row">{{i +1}}</th>
+        <td>{{producto.nombre}}</td>
+        <td>{{producto.poder}}</td>
+        <td>
+          <label *ngIf="producto.vivo" class="badge badge-success">Vivo</label>
+          <label *ngIf="!producto.vivo" class="badge badge-danger">Muerto</label>
+        </td>
+        <td>
+          <button class="btn btn-info mr-1"
+          [routerLink]="[ '/producto', producto.id ]">
+            <i class="fa fa-pen"></i>
+          </button>
+          <button class="btn btn-danger" 
+            (click)="borrarProducto(producto, i)">
+            <i class="fa fa-trash"></i>
+          </button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!cargando && productos.length === 0"
+   class="alert alert-warning text-center mt-3">
+    <h4 class="alert-heading">No hay registro</h4>
+    <p>
+        <i class="fa fa-exclamation fa-2x"></i>
+    </p>
+</div>
+
+  <div class="alert alert-info text-center mt-3 inimated fadeIn faster" *ngIf="cargando">
+      <h4 class="alert-heading">cargando</h4>
+      <p>
+          <i class="fa fa-sync-alt fa-spin fa-2x"></i>
+      </p>
+      <div class="mb-0">
+          Espere porfavor
+      </div>
+  </div>
