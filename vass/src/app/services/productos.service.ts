@@ -20,6 +20,10 @@ export class ProductosService {
       })
     )
   }
+ 
+  getProductoId(id:string){
+    return this.http.get(`${this.url}/producto/${id}.json`);
+  }
   actualizarProducto( producto: ProductoModel){
 
     const productoTemp ={
@@ -29,9 +33,6 @@ export class ProductosService {
     delete productoTemp.id;
 
     return this.http.put(`${this.url}/producto/${producto.id}.json`, productoTemp)
-  }
-  getProductoId(id:string){
-    return this.http.get(`${this.url}/producto/${id}.json`);
   }
 
   borrarProducto(id:string){
