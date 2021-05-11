@@ -1,4 +1,4 @@
-<h1 class="mt-5">Producto</h1>
+<h1 class="mt-5">Perfiles Profesionales</h1>
 <hr>
 <div class="row">
     <div class="col text-right">
@@ -13,7 +13,7 @@
         <th scope="col">#</th>
         <th scope="col">Nombre</th>
         <th scope="col">Profesión</th>
-        <th scope="col">Vivo</th>
+        <th scope="col">Estado</th>
         <th scope="col">Herramientas</th>
       </tr>
     </thead>
@@ -23,8 +23,8 @@
         <td>{{producto.nombre}}</td>
         <td>{{producto.poder}}</td>
         <td>
-          <label *ngIf="producto.vivo" class="badge badge-success">Vivo</label>
-          <label *ngIf="!producto.vivo" class="badge badge-danger">Muerto</label>
+          <label *ngIf="producto.vivo" class="badge badge-success">Trabaja</label>
+          <label *ngIf="!producto.vivo" class="badge badge-danger">Sin trabajo</label>
         </td>
         <td>
           <button class="btn btn-info mr-1"
