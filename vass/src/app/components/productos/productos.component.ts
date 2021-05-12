@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 import { ProductoModel } from 'src/app/models/producto.model';
 import { ProductosService } from 'src/app/services/productos.service';
 import Swal from 'sweetalert2';
@@ -14,7 +15,8 @@ export class ProductosComponent implements OnInit {
 
   cargando = false;
 
-  constructor(private productoService: ProductosService) { }
+  constructor(private productoService: ProductosService,
+                      public auth: AuthService ) { }
 
   ngOnInit() {
 

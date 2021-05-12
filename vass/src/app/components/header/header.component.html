@@ -5,13 +5,7 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/tareas" *ngIf="(auth.isAuthenticated$ | async)">lista</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/protegida" *ngIf="(auth.isAuthenticated$ | async)">protegido</a>
+            <a class="nav-link" routerLinkActive="active" routerLink="/productos" *ngIf="(auth.isAuthenticated$ | async)">productos</a>
           </li>
         </ul>
         <span class="navbar-text">
